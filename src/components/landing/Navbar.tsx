@@ -45,9 +45,9 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link to="/register">
+          <a href="https://discord.gg/axyte" target="_blank" rel="noopener noreferrer">
             <Button size="sm" className="rounded-full px-6">Sign Up</Button>
-          </Link>
+          </a>
         </div>
 
         <button
@@ -76,9 +76,9 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-2">
-              <Link to="/register">
+              <a href="https://discord.gg/axyte" target="_blank" rel="noopener noreferrer">
                 <Button className="w-full rounded-full">Sign Up</Button>
-              </Link>
+              </a>
             </div>
           </div>
         </motion.div>

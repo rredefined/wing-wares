@@ -30,18 +30,17 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold">Company</h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              <li><a href="https://discord.gg/axyte" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Discord</a></li>
               <li><a href="#" className="hover:text-foreground">About</a></li>
-              <li><a href="#" className="hover:text-foreground">Blog</a></li>
-              <li><a href="#" className="hover:text-foreground">Careers</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display font-semibold">Support</h4>
+            <h4 className="font-display font-semibold">Legal</h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              <li><Link to="/privacy-policy" className="hover:text-foreground">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="hover:text-foreground">Terms of Service</Link></li>
               <li><a href="#faq" className="hover:text-foreground">FAQ</a></li>
-              <li><Link to="/login" className="hover:text-foreground">Contact</Link></li>
-              <li><a href="#" className="hover:text-foreground">Status</a></li>
             </ul>
           </div>
         </div>
