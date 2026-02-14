@@ -1,27 +1,29 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+
+
+const DISCORD_LINK = "https://discord.gg/axyte";
 
 const plans = [
   {
     name: "Bot Hosting",
-    price: "Free",
-    unit: "",
+    price: "₹14.99",
+    unit: "/mo",
     features: ["ECC Memory", "Fast Performance", "Low Latency", "Advanced Security", "Managed Services"],
     popular: true,
   },
   {
-    name: "Game Servers",
-    price: "Free",
-    unit: "",
+    name: "Minecraft Hosting",
+    price: "₹50",
+    unit: "/mo",
     features: ["Instant Deployment", "DDoS Protection", "24/7 Support", "Custom Configurations", "Mod Support"],
     popular: false,
   },
   {
-    name: "Lavalink",
-    price: "Free",
-    unit: "",
+    name: "VPS Hosting",
+    price: "₹199",
+    unit: "/mo",
     features: ["Full Root Access", "SSD Storage", "99.9% Uptime", "Multiple Node Options", "Backup Included"],
     popular: false,
   },
@@ -85,6 +87,7 @@ const PricingSection = () => {
               <div className="mt-2 text-sm text-muted-foreground">Starting at</div>
               <div className="mt-2">
                 <span className="font-display text-4xl font-bold text-primary">{plan.price}</span>
+                <span className="text-sm text-muted-foreground">{plan.unit}</span>
               </div>
 
               <ul className="mt-8 space-y-3">
@@ -96,14 +99,14 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <Link to="/register" className="mt-8 block">
+              <a href={DISCORD_LINK} target="_blank" rel="noopener noreferrer" className="mt-8 block">
                 <Button
                   className="w-full rounded-full"
                   variant={plan.popular ? "default" : "outline"}
                 >
                   Start Now
                 </Button>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink, Zap, Shield, Clock, Headphones } from "lucide-react";
-import { Link } from "react-router-dom";
+
 
 const featureCards = [
   { icon: Zap, title: "Instant Setup", description: "Get your server running in under 60 seconds" },
@@ -49,11 +49,11 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
-              <Link to="/register">
+              <a href="https://discord.gg/axyte" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="gap-2 rounded-full text-base font-semibold px-8">
                   Get Started <ArrowRight size={18} />
                 </Button>
-              </Link>
+              </a>
               <a href="#features">
                 <Button variant="outline" size="lg" className="gap-2 rounded-full text-base px-8">
                   Learn More <ExternalLink size={16} />
