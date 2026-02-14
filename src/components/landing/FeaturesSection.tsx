@@ -1,20 +1,14 @@
 import { motion } from "framer-motion";
-import { Zap, Shield, Clock, Headphones, Cpu, Globe, Lock, RefreshCcw, TrendingUp, Network } from "lucide-react";
-
-const mainFeatures = [
-  { icon: Zap, title: "Instant Setup", description: "Deploy your server in under 60 seconds with our automated provisioning system." },
-  { icon: Shield, title: "DDoS Protection", description: "Enterprise-grade protection keeping your servers safe from attacks 24/7." },
-  { icon: Clock, title: "99.9% Uptime", description: "Industry-leading reliability with redundant infrastructure and failover systems." },
-  { icon: Headphones, title: "24/7 Support", description: "Expert support team available around the clock via tickets and live chat." },
-];
+import { Cpu, Zap, Lock, RefreshCcw, Settings, TrendingUp, Globe, Network } from "lucide-react";
 
 const advancedFeatures = [
-  { icon: Cpu, title: "High Performance", description: "Latest-gen AMD EPYC & Intel Xeon processors with NVMe storage." },
-  { icon: Globe, title: "Low Latency", description: "Global network of data centers ensuring minimal latency worldwide." },
-  { icon: Lock, title: "Security First", description: "Automated backups, encrypted connections, and isolated containers." },
-  { icon: RefreshCcw, title: "Auto Recovery", description: "Automatic crash detection and restart to keep your services running." },
-  { icon: TrendingUp, title: "Resource Scaling", description: "Upgrade your plan anytime to scale CPU, RAM, and storage on the fly." },
-  { icon: Network, title: "Global Network", description: "Premium bandwidth with 10Gbps network ports across all locations." },
+  { icon: Cpu, title: "High Performance", description: "Powered by latest generation processors for performance" },
+  { icon: Zap, title: "Low Latency", description: "Optimized network infrastructure for minimal lag and delay" },
+  { icon: Lock, title: "Advanced Security", description: "Our system is protected by advanced, multi-layered security protocols designed to detect, isolate, and neutralize threats in real time." },
+  { icon: RefreshCcw, title: "Auto Recovery", description: "Automatic server recovery and backup systems" },
+  { icon: Settings, title: "Full Control", description: "Complete server control panel with advanced configuration options" },
+  { icon: TrendingUp, title: "Resource Scaling", description: "Dynamic resource allocation based on server demands" },
+  { icon: Globe, title: "Global Network", description: "Worldwide server locations for optimal connectivity" },
 ];
 
 const container = {
@@ -35,67 +29,51 @@ const FeaturesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-4"
+        >
+          <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            We Won't Disappoint
+          </span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-4"
         >
           <h2 className="font-display text-4xl font-bold">
-            Why Choose <span className="text-primary">RenderByte</span>?
+            Advanced <span className="text-primary">Features</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Everything you need for reliable, high-performance hosting.</p>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 max-w-2xl text-muted-foreground"
+        >
+          Everything you need for professional game server hosting
+        </motion.p>
 
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {mainFeatures.map((f) => (
+          {advancedFeatures.map((f) => (
             <motion.div
               key={f.title}
               variants={item}
               className="group rounded-xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-colors hover:border-primary/30 hover:bg-card"
             >
               <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3 text-primary">
-                <f.icon size={24} />
+                <f.icon size={22} />
               </div>
-              <h3 className="font-display text-lg font-semibold">{f.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{f.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Advanced Features */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12 mt-24 text-center"
-        >
-          <h2 className="font-display text-3xl font-bold">Advanced Features</h2>
-          <p className="mt-4 text-muted-foreground">Built for performance, reliability, and scale.</p>
-        </motion.div>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {advancedFeatures.map((f) => (
-            <motion.div
-              key={f.title}
-              variants={item}
-              className="flex items-start gap-4 rounded-xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-colors hover:border-primary/30"
-            >
-              <div className="shrink-0 rounded-lg bg-primary/10 p-2.5 text-primary">
-                <f.icon size={20} />
-              </div>
-              <div>
-                <h3 className="font-display font-semibold">{f.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{f.description}</p>
-              </div>
+              <h3 className="font-display text-base font-bold">{f.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.description}</p>
             </motion.div>
           ))}
         </motion.div>
