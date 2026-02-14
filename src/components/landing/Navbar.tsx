@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
+  { label: "Home", href: "#" },
+  { label: "Services", href: "#pricing" },
   { label: "Features", href: "#features" },
-  { label: "Locations", href: "#locations" },
-  { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -23,32 +24,29 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <span className="font-display text-sm font-bold text-primary-foreground">R</span>
-          </div>
+          <img src={logo} alt="AxyteHost" className="h-8 w-8" />
           <span className="font-display text-xl font-bold text-foreground">
-            Render<span className="text-primary">Byte</span>
+            Axyte<span className="text-primary">Host</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-1 md:flex">
+          <div className="flex items-center gap-1 rounded-full border border-border/50 bg-card/50 px-2 py-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="rounded-full px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-primary/10 hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link to="/login">
-            <Button variant="ghost" size="sm">Log In</Button>
-          </Link>
           <Link to="/register">
-            <Button size="sm">Get Started</Button>
+            <Button size="sm" className="rounded-full px-6">Sign Up</Button>
           </Link>
         </div>
 
@@ -78,11 +76,8 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex flex-col gap-2 pt-2">
-              <Link to="/login">
-                <Button variant="ghost" className="w-full">Log In</Button>
-              </Link>
               <Link to="/register">
-                <Button className="w-full">Get Started</Button>
+                <Button className="w-full rounded-full">Sign Up</Button>
               </Link>
             </div>
           </div>

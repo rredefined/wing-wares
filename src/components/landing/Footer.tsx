@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,15 +8,13 @@ const Footer = () => {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="font-display text-sm font-bold text-primary-foreground">R</span>
-              </div>
+              <img src={logo} alt="AxyteHost" className="h-8 w-8" />
               <span className="font-display text-xl font-bold">
-                Render<span className="text-primary">Byte</span>
+                Axyte<span className="text-primary">Host</span>
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Premium hosting solutions for gamers and developers.
+              Premium hosting solutions for gamers and developers in India.
             </p>
           </div>
 
@@ -48,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} RenderByte. All rights reserved.
+          © {new Date().getFullYear()} AxyteHost. All rights reserved.
         </div>
       </div>
     </footer>

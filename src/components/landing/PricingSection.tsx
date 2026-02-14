@@ -5,27 +5,24 @@ import { Link } from "react-router-dom";
 
 const plans = [
   {
-    name: "Starter",
-    category: "Bot Hosting",
-    price: 100,
-    unit: "coins/mo",
-    features: ["1 vCPU Core", "1 GB RAM", "5 GB NVMe SSD", "Unmetered Bandwidth", "DDoS Protection", "24/7 Support"],
-    popular: false,
-  },
-  {
-    name: "Performance",
-    category: "Game Servers",
-    price: 300,
-    unit: "coins/mo",
-    features: ["2 vCPU Cores", "4 GB RAM", "20 GB NVMe SSD", "Unmetered Bandwidth", "DDoS Protection", "Priority Support", "Auto Backups"],
+    name: "Bot Hosting",
+    price: "Free",
+    unit: "",
+    features: ["ECC Memory", "Fast Performance", "Low Latency", "Advanced Security", "Managed Services"],
     popular: true,
   },
   {
-    name: "Enterprise",
-    category: "Dedicated",
-    price: 750,
-    unit: "coins/mo",
-    features: ["4 vCPU Cores", "8 GB RAM", "50 GB NVMe SSD", "Unmetered Bandwidth", "DDoS Protection", "Dedicated Support", "Auto Backups", "Custom Domain"],
+    name: "Game Servers",
+    price: "Free",
+    unit: "",
+    features: ["Instant Deployment", "DDoS Protection", "24/7 Support", "Custom Configurations", "Mod Support"],
+    popular: false,
+  },
+  {
+    name: "Lavalink",
+    price: "Free",
+    unit: "",
+    features: ["Full Root Access", "SSD Storage", "99.9% Uptime", "Multiple Node Options", "Backup Included"],
     popular: false,
   },
 ];
@@ -38,12 +35,31 @@ const PricingSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-4 text-center"
         >
           <h2 className="font-display text-4xl font-bold">
-            Simple <span className="text-primary">Pricing</span>
+            Pricing <span className="text-primary">Plans</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Transparent pricing with no hidden fees. Pay with coins.</p>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-4 text-center text-muted-foreground"
+        >
+          Choose the perfect plan for your needs. All plans include our core features with no hidden fees.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/50 px-4 py-2 text-sm text-muted-foreground">
+            ₹ INR - Indian Rupee
+          </span>
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -65,11 +81,10 @@ const PricingSection = () => {
                   Most Popular
                 </div>
               )}
-              <div className="text-sm font-medium text-primary">{plan.category}</div>
-              <h3 className="mt-1 font-display text-2xl font-bold">{plan.name}</h3>
-              <div className="mt-4">
+              <h3 className="font-display text-2xl font-bold">{plan.name}</h3>
+              <div className="mt-2 text-sm text-muted-foreground">Starting at</div>
+              <div className="mt-2">
                 <span className="font-display text-4xl font-bold text-primary">{plan.price}</span>
-                <span className="ml-2 text-sm text-muted-foreground">{plan.unit}</span>
               </div>
 
               <ul className="mt-8 space-y-3">
@@ -83,10 +98,10 @@ const PricingSection = () => {
 
               <Link to="/register" className="mt-8 block">
                 <Button
-                  className="w-full"
+                  className="w-full rounded-full"
                   variant={plan.popular ? "default" : "outline"}
                 >
-                  Get Started
+                  Start Now
                 </Button>
               </Link>
             </motion.div>
